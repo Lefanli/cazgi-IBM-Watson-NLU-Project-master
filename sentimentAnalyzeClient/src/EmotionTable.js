@@ -3,15 +3,35 @@ import './bootstrap.min.css';
 
 class EmotionTable extends React.Component {
     render() {
-      //Returns the emotions as an HTML table
       return (  
         <div>
           <table className="table table-bordered">
             <tbody>
             {
-              /*Write code to use the .map method that you worked on in the 
-              Hands-on React lab to extract the emotions. If you are stuck,
-              please click the instructions to see how to implement a map*/
+              [this.props.emotions].map((emotion, index) => (
+                  <>
+                        <tr>
+                            <td>Sadness:</td>
+                            <td>{emotion.sadness}</td>
+                        </tr>
+                        <tr>
+                            <td>Joy:</td>
+                            <td>{emotion.joy}</td>
+                        </tr>
+                        <tr>
+                            <td>Fear:</td>
+                            <td>{emotion.fear}</td>
+                        </tr>
+                        <tr>
+                            <td>Disgust:</td>
+                            <td>{emotion.disgust}</td>
+                        </tr>
+                        <tr>
+                            <td>Anger:</td>
+                            <td>{emotion.anger}</td>
+                        </tr>
+                    </>
+                ))
             }
             </tbody>
           </table>
